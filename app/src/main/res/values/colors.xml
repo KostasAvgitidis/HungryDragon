@@ -7,5 +7,6 @@
     <color name="colorButton">#fb8c00</color>
     <color name="colorText">#FFFFFF</color>\
     <color name="colorBlack">#000000</color>
+    <color name="colorTransparent">#80000000</color>
 
 </resources>
