@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CarouselOne" />
-        <activity android:name=".CarouselTwo"></activity>
+        <activity android:name=".CarouselTwo" />
+        <activity android:name=".RecipeSearch"></activity>
     </application>
 
 </manifest>

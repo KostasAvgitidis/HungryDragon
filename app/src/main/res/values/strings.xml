@@ -3,4 +3,7 @@
     <string name="introduction_text">Feeling Hungry?</string>
     <string name="yes_text">YES!</string>
     <string name="emptyString">  </string>
+    <string name="carousel_two">So does Luke, so lets find some tasty recipes!</string>
+    <string name="lets_go_button">Lets Go</string>
+    <string name="search_recipes">Search for Recipes</string>
 </resources>

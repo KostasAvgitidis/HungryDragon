@@ -4,14 +4,63 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorBackground"
     tools:context="com.bitthebyte.kostasavgitidis.hungrydragon.MainActivity">
 
-    <TextView
+    <include
+        android:id="@+id/include"
+        layout="@layout/custom_toolbar"
+        >
+
+    </include>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/dragon_right" />
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:width="200dp"
+        android:height="60dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:onClick="jumpToRecipeSearch"
+        android:text="@string/search_recipes"
+        android:textAllCaps="false"
+        android:textColor="@color/colorText" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/pizza_bubble" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/include"
+        android:layout_marginEnd="49dp"
+        android:layout_marginTop="21dp"
+        android:src="@drawable/burger_bubble" />
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_above="@+id/button"
+        android:layout_alignStart="@+id/imageView4"
+        android:src="@drawable/cake_bubble" />
+
 </RelativeLayout>

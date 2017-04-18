@@ -17,18 +17,19 @@ public class CarouselOne extends AppCompatActivity {
         onClick(buttonName);
     }
 
-        public void carouselTwo(View view) {
-            Intent intent = new Intent(this, CarouselTwo.class);
-            startActivity(intent); //start of CarouselTwo.java
-        }
+    public void carouselTwo(View view) {
+        Intent intent = new Intent(this, CarouselTwo.class);
+        startActivity(intent); //start of CarouselTwo.java
+    }
 
-    ImageButton buttonName = (ImageButton)findViewById(R.id.next_button);
+    ImageButton buttonName = (ImageButton) findViewById(R.id.next_button);
+
     public void onClick(View v) {
-        if(v==buttonName){
+        if (v == buttonName) {
             buttonName.setBackgroundResource(R.drawable.right_arrow3);
         }
     }
-    }
+}
 
 
 
