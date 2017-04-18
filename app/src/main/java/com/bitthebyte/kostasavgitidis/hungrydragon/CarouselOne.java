@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import static com.bitthebyte.kostasavgitidis.hungrydragon.R.attr.background;
+import static com.bitthebyte.kostasavgitidis.hungrydragon.R.id.imageView;
 
 public class CarouselOne extends AppCompatActivity {
 
@@ -14,7 +19,7 @@ public class CarouselOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carousel_one);
         setTitle(R.string.emptyString);
-        onClick(buttonName);
+
     }
 
     public void carouselTwo(View view) {
@@ -22,13 +27,8 @@ public class CarouselOne extends AppCompatActivity {
         startActivity(intent); //start of CarouselTwo.java
     }
 
-    ImageButton buttonName = (ImageButton) findViewById(R.id.next_button);
+    
 
-    public void onClick(View v) {
-        if (v == buttonName) {
-            buttonName.setBackgroundResource(R.drawable.right_arrow3);
-        }
-    }
 }
 
 
