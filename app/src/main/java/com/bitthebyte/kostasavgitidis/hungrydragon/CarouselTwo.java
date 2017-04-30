@@ -15,7 +15,7 @@ public class CarouselTwo extends AppCompatActivity {
     }
 
     public void jumpToMainScreen(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent); //start of MainActivity.java
+        Intent intent = new Intent(this, IntroScreen.class);
+        startActivity(intent); //start of IntroScreen.java
     }
 }

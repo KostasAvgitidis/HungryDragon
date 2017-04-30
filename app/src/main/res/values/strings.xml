@@ -6,4 +6,9 @@
     <string name="carousel_two">So does Luke, so lets find some tasty recipes!</string>
     <string name="lets_go_button">Lets Go</string>
     <string name="search_recipes">Search for Recipes</string>
+    <string name="hint_text">Enter and ingredient or a recipe name</string>
+    <string name="search">Search</string>
+    <string name="result_text">Your recipe results</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="title_activity_detail">Detail Activity</string>
 </resources>

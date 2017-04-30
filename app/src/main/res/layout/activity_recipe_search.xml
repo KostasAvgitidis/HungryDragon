@@ -1,9 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context="com.bitthebyte.kostasavgitidis.hungrydragon.RecipeSearch">
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        android:id="@+id/recipe_search_include"
+        layout="@layout/custom_toolbar"
+
+        ></include>
+
+
+
+
+    <ImageView
+        android:id="@+id/dragon_left_image_view"
+        android:layout_width="300dp"
+        android:layout_height="280dp"
+        android:src="@drawable/dragon_left"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/dragon_fruit_image_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+
+        android:src="@drawable/dragon_fruit"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="21dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_text"
+        android:layout_below="@+id/recipe_search_include"
+        android:ems="10"
+        android:paddingTop="32dp"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/search_button2"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="@string/search"
+        android:onClick="storeValue"
+        android:textColor="@color/colorText"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

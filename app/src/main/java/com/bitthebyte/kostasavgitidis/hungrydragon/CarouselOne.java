@@ -27,7 +27,7 @@ public class CarouselOne extends AppCompatActivity {
         startActivity(intent); //start of CarouselTwo.java
     }
 
-    
+
 
 }
 
