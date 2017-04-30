@@ -226,11 +226,11 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
 
-            holder.tvPublisher.setText(recipeModelList.get(position).getPublisher());
+            holder.tvPublisher.setText("Publisher: " + recipeModelList.get(position).getPublisher());
             holder.tvPublisherUrl.setText(recipeModelList.get(position).getPublisher_url());
             holder.tvF2flink.setText("Food2Fork Link: " + recipeModelList.get(position).getF2f_url());
             holder.tvSource_url.setText("Source: " + recipeModelList.get(position).getSource_url());
-            holder.tvTitle.setText("Title: " + recipeModelList.get(position).getTitle());
+            holder.tvTitle.setText(recipeModelList.get(position).getTitle());
 
             return convertView;
         }

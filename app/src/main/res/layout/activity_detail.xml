@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="left|top"
     android:background="@color/colorBackground">
 
@@ -10,16 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="4dp">
+        android:padding="4dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <ImageView
                     android:id="@+id/ivIcon"
@@ -47,42 +50,47 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             >
-            <!--android:background="@drawable/rounded_bg"-->
 
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="RecipeTitle"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:textSize="32sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorText"/>
 
             <TextView
                 android:id="@+id/tvPublisher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Publisher"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/colorText"/>
 
             <TextView
                 android:id="@+id/tvPublisherUrl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PublisherURL"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/colorText"/>
 
             <TextView
                 android:id="@+id/tvSource_url"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="RecipeLink"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/colorText"/>
 
             <TextView
                 android:id="@+id/tvF2flink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="F2FLink"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/colorText"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
