@@ -30,9 +30,10 @@
         android:layout_height="150dp"
 
         android:src="@drawable/dragon_fruit"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="21dp" />
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="41dp"
+        android:layout_above="@+id/dragon_left_image_view"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/editText"
@@ -44,6 +45,7 @@
         android:paddingTop="32dp"
         android:inputType="textPersonName"
         android:textColorHint="@color/colorText"
+        android:textColor="@color/colorText"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 

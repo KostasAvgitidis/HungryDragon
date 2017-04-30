@@ -44,12 +44,10 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    private final String URL_TO_HIT = "http://food2fork.com/api/search?key=c60b34b9ca87a32ff0758eb171c2ac13&q=onion%20rings";
-    private TextView tvRecipes;
+    private final String URL_TO_HIT = RecipeSearch.getItext();
     private ListView lvRecipes;
     private ProgressDialog dialog;
 
-    // Git error fix - http://stackoverflow.com/questions/16614410/android-studio-checkout-github-error-createprocess-2-windows
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,7 +188,6 @@ public class MainActivity extends ActionBarActivity {
                 holder.tvPublisher = (TextView) convertView.findViewById(R.id.tvPublisher);
                 holder.tvPublisherUrl = (TextView) convertView.findViewById(R.id.tvPublisherUrl);
                 holder.tvSource_url = (TextView) convertView.findViewById(R.id.tvSource_url);
-                holder.tvF2flink = (TextView) convertView.findViewById(R.id.tvF2flink);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -228,7 +225,6 @@ public class MainActivity extends ActionBarActivity {
 
             holder.tvPublisher.setText("Publisher: " + recipeModelList.get(position).getPublisher());
             holder.tvPublisherUrl.setText(recipeModelList.get(position).getPublisher_url());
-            holder.tvF2flink.setText("Food2Fork Link: " + recipeModelList.get(position).getF2f_url());
             holder.tvSource_url.setText("Source: " + recipeModelList.get(position).getSource_url());
             holder.tvTitle.setText(recipeModelList.get(position).getTitle());
 
@@ -239,7 +235,6 @@ public class MainActivity extends ActionBarActivity {
         class ViewHolder {
             private ImageView ivRecipeIcon;
             private TextView tvTitle;
-            private TextView tvF2flink;
             private TextView tvSource_url;
             private TextView tvPublisherUrl;
             private TextView tvPublisher;

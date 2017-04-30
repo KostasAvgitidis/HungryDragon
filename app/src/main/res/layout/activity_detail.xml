@@ -84,13 +84,6 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/colorText"/>
 
-            <TextView
-                android:id="@+id/tvF2flink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="F2FLink"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/colorText"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

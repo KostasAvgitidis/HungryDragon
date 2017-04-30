@@ -20,7 +20,6 @@ public class DetailActivity extends ActionBarActivity {
 
     private ImageView ivRecipeIcon;
     private TextView tvTitle;
-    private TextView tvF2flink;
     private TextView tvSource_url;
     private TextView tvPublisherUrl;
     private TextView tvPublisher;
@@ -72,7 +71,6 @@ public class DetailActivity extends ActionBarActivity {
             tvPublisher.setText("Publisher: " + recipeModel.getPublisher());
             tvPublisherUrl.setText("Website: " + recipeModel.getPublisher_url());
             tvSource_url.setText("Recipe link: " + recipeModel.getSource_url());
-            tvF2flink.setText("Food2Fork: " + recipeModel.getF2f_url());
             tvTitle.setText(recipeModel.getTitle());
 
 
@@ -85,7 +83,6 @@ public class DetailActivity extends ActionBarActivity {
         tvPublisher = (TextView) findViewById(R.id.tvPublisher);
         tvPublisherUrl = (TextView) findViewById(R.id.tvPublisherUrl);
         tvSource_url = (TextView) findViewById(R.id.tvSource_url);
-        tvF2flink = (TextView) findViewById(R.id.tvF2flink);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
     }

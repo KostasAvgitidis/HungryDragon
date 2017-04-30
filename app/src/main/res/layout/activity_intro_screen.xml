@@ -37,30 +37,38 @@
         android:textColor="@color/colorText" />
 
 
-    <ImageView
+    <ImageButton
         android:id="@+id/pizza_image_view"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/imageView2"
         android:layout_marginTop="30dp"
-        android:src="@drawable/pizza_bubble" />
+        android:background="@android:color/transparent"
+        android:onClick="findPizzas"
+        android:src="@drawable/pizza_bubble_small" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/burger_image_view"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/include"
         android:layout_marginEnd="49dp"
         android:layout_marginTop="21dp"
-        android:src="@drawable/burger_bubble" />
+        android:background="@android:color/transparent"
+        android:onClick="findBurgers"
+        android:src="@drawable/burger_bubble_small" />
 
-    <ImageView
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/search_recipes_button"
         android:layout_alignStart="@+id/burger_image_view"
-        android:src="@drawable/cake_bubble" />
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="11dp"
+        android:background="@android:color/transparent"
+        android:onClick="findCakes"
+        android:src="@drawable/cake_bubble_small" />
 
 </RelativeLayout>
