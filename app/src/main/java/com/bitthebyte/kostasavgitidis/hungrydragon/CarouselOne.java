@@ -1,16 +1,11 @@
 package com.bitthebyte.kostasavgitidis.hungrydragon;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import static com.bitthebyte.kostasavgitidis.hungrydragon.R.attr.background;
-import static com.bitthebyte.kostasavgitidis.hungrydragon.R.id.imageView;
 
 public class CarouselOne extends AppCompatActivity {
 
@@ -19,14 +14,22 @@ public class CarouselOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carousel_one);
         setTitle(R.string.emptyString);
-
+        SharedPreferences pref = getSharedPreferences("ActivityPREF", Context.MODE_PRIVATE);
+        if(pref.getBoolean("activity_executed", false)){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            SharedPreferences.Editor ed = pref.edit();
+            ed.putBoolean("activity_executed", true);
+            ed.commit();
+        }
     }
 
     public void carouselTwo(View view) {
         Intent intent = new Intent(this, CarouselTwo.class);
         startActivity(intent); //start of CarouselTwo.java
     }
-
 
 
 }

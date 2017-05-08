@@ -20,7 +20,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bitthebyte.kostasavgitidis.hungrydragon.models.RecipeModel;
 import com.google.gson.Gson;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -44,7 +43,7 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    private final String URL_TO_HIT = RecipeSearch.getItext();
+    private final String URL_TO_HIT = "https://api.edamam.com/search?q=chicken%20&app_id=f290a7ef&app_key=e872f9068619df645438f4e52127c9b2&from=0&to=3&calories=gte%20591,%20lte%20722";
     private ListView lvRecipes;
     private ProgressDialog dialog;
 
@@ -104,7 +103,7 @@ public class MainActivity extends ActionBarActivity {
                 String finalJson = buffer.toString();
 
                 JSONObject parentObject = new JSONObject(finalJson);
-                JSONArray parentArray = parentObject.getJSONArray("recipes");
+                JSONArray parentArray = parentObject.getJSONArray("hits");
 
                 List<RecipeModel> recipeModelList = new ArrayList<>();
 
@@ -150,13 +149,13 @@ public class MainActivity extends ActionBarActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         RecipeModel recipeModel = result.get(position); // getting the model
-                        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                        Intent intent = new Intent(MainActivity.this, MyActivity.class);
                         intent.putExtra("recipeModel", new Gson().toJson(recipeModel)); // converting model json into string type and sending it via intent
                         startActivity(intent);
                     }
                 });
             } else {
-                Toast.makeText(getApplicationContext(), "Not able to fetch data from server, please check url.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Not able to fetch data from server, please check your search criteria", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -183,11 +182,12 @@ public class MainActivity extends ActionBarActivity {
             if (convertView == null) {
                 holder = new ViewHolder();
                 convertView = inflater.inflate(resource, null);
-                holder.ivRecipeIcon = (ImageView) convertView.findViewById(R.id.ivIcon);
-                holder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
-                holder.tvPublisher = (TextView) convertView.findViewById(R.id.tvPublisher);
-                holder.tvPublisherUrl = (TextView) convertView.findViewById(R.id.tvPublisherUrl);
-                holder.tvSource_url = (TextView) convertView.findViewById(R.id.tvSource_url);
+                holder.ivRecipeImage = (ImageView) convertView.findViewById(R.id.ivIcon);
+                holder.tvLabel = (TextView) convertView.findViewById(R.id.tvLabel);
+                holder.tvSource = (TextView) convertView.findViewById(R.id.tvSource);
+                holder.tvUrl = (TextView) convertView.findViewById(R.id.tvUrl);
+                holder.tvCalories = (TextView) convertView.findViewById(R.id.tvCalories);
+                holder.tvYield = (TextView) convertView.findViewById(R.id.tvYield);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -197,47 +197,49 @@ public class MainActivity extends ActionBarActivity {
 
             // Then later, when you want to display image
             final ViewHolder finalHolder = holder;
-            ImageLoader.getInstance().displayImage(recipeModelList.get(position).getImage_url(), holder.ivRecipeIcon, new ImageLoadingListener() {
+            ImageLoader.getInstance().displayImage(recipeModelList.get(position).getHits().get(position).getRecipe().getImage(), holder.ivRecipeImage, new ImageLoadingListener() {
                 @Override
                 public void onLoadingStarted(String imageUri, View view) {
                     progressBar.setVisibility(View.VISIBLE);
-                    finalHolder.ivRecipeIcon.setVisibility(View.INVISIBLE);
+                    finalHolder.ivRecipeImage.setVisibility(View.INVISIBLE);
                 }
 
                 @Override
                 public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
                     progressBar.setVisibility(View.GONE);
-                    finalHolder.ivRecipeIcon.setVisibility(View.INVISIBLE);
+                    finalHolder.ivRecipeImage.setVisibility(View.INVISIBLE);
                 }
 
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                     progressBar.setVisibility(View.GONE);
-                    finalHolder.ivRecipeIcon.setVisibility(View.VISIBLE);
+                    finalHolder.ivRecipeImage.setVisibility(View.VISIBLE);
                 }
 
                 @Override
                 public void onLoadingCancelled(String imageUri, View view) {
                     progressBar.setVisibility(View.GONE);
-                    finalHolder.ivRecipeIcon.setVisibility(View.INVISIBLE);
+                    finalHolder.ivRecipeImage.setVisibility(View.INVISIBLE);
                 }
             });
 
-            holder.tvPublisher.setText("Publisher: " + recipeModelList.get(position).getPublisher());
-            holder.tvPublisherUrl.setText(recipeModelList.get(position).getPublisher_url());
-            holder.tvSource_url.setText("Source: " + recipeModelList.get(position).getSource_url());
-            holder.tvTitle.setText(recipeModelList.get(position).getTitle());
+            holder.tvSource.setText("Publisher: " + recipeModelList.get(position).getHits().get(position).getRecipe().getSource());
+            holder.tvCalories.setText(String.valueOf(recipeModelList.get(position).getHits().get(position).getRecipe().getCalories()));
+            holder.tvUrl.setText("Source: " + recipeModelList.get(position).getHits().get(position).getRecipe().getUrl());
+            holder.tvLabel.setText(recipeModelList.get(position).getHits().get(position).getRecipe().getLabel());
+            holder.tvYield.setText(String.valueOf(recipeModelList.get(position).getHits().get(position).getRecipe().getYield()));
 
             return convertView;
         }
 
 
         class ViewHolder {
-            private ImageView ivRecipeIcon;
-            private TextView tvTitle;
-            private TextView tvSource_url;
-            private TextView tvPublisherUrl;
-            private TextView tvPublisher;
+            private ImageView ivRecipeImage;
+            private TextView tvLabel;
+            private TextView tvUrl;
+            private TextView tvSource;
+            private TextView tvYield;
+            private TextView tvCalories;
 
         }
 

@@ -24,12 +24,14 @@ public class IntroScreen extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent); //start of MainActivity.java
     }
+
     public void findBurgers(View view) {
         String text = "http://food2fork.com/api/search?key=c60b34b9ca87a32ff0758eb171c2ac13&q=burger";
         RecipeSearch.setItext(text);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent); //start of MainActivity.java
     }
+
     public void findPizzas(View view) {
         String text = "http://food2fork.com/api/search?key=c60b34b9ca87a32ff0758eb171c2ac13&q=pizza";
         RecipeSearch.setItext(text);

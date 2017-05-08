@@ -10,19 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="4dp"
-        >
+        android:padding="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/ivIcon"
@@ -44,21 +41,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="16dp"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            >
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="RecipeTitle"
-                android:textSize="32sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorText"/>
+                android:textColor="@color/colorText"
+                android:textSize="32sp" />
 
             <TextView
                 android:id="@+id/tvPublisher"
@@ -66,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:text="Publisher"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/colorText"/>
+                android:textColor="@color/colorText" />
 
             <TextView
                 android:id="@+id/tvPublisherUrl"
@@ -74,15 +70,16 @@
                 android:layout_height="wrap_content"
                 android:text="PublisherURL"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/colorText"/>
+                android:textColor="@color/colorText" />
 
             <TextView
                 android:id="@+id/tvSource_url"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="web"
                 android:text="RecipeLink"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/colorText"/>
+                android:textColor="@color/colorText" />
 
         </LinearLayout>
     </LinearLayout>

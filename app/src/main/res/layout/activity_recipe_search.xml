@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:weightSum="1"
     tools:context="com.bitthebyte.kostasavgitidis.hungrydragon.RecipeSearch">
 
     <include
@@ -14,50 +18,250 @@
         ></include>
 
 
-
-
-    <ImageView
-        android:id="@+id/dragon_left_image_view"
-        android:layout_width="300dp"
-        android:layout_height="280dp"
-        android:src="@drawable/dragon_left"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
-    <ImageView
-        android:id="@+id/dragon_fruit_image_view"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-
-        android:src="@drawable/dragon_fruit"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="41dp"
-        android:layout_above="@+id/dragon_left_image_view"
-        android:layout_alignParentStart="true" />
-
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_text"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/recipe_search_include"
         android:ems="10"
-        android:paddingTop="32dp"
+        android:hint="@string/hint_text"
         android:inputType="textPersonName"
-        android:textColorHint="@color/colorText"
+        android:paddingTop="32dp"
         android:textColor="@color/colorText"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:textColorHint="@color/colorText" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calories: "
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/fromEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText"
+            android:hint="From"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="-"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/toEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText"
+            android:hint="To"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Per Serving)"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:text="Number of Results: "
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/resultNumberEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="..."
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Diet type and Allergies"
+            android:textColor="@color/colorButton"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
+
+        <ToggleButton
+            android:id="@+id/fatButton"
+            android:layout_width="81dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="Low-Fat"
+            android:textOn="Low-Fat" />
+
+        <ToggleButton
+            android:id="@+id/carbButton"
+            android:layout_width="76dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="Low-Carb"
+            android:textOn="Low-Carb" />
+
+        <ToggleButton
+            android:id="@+id/balancedButton"
+            android:layout_width="81dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="Balanced"
+            android:textOn="Balanced" />
+
+        <ToggleButton
+            android:id="@+id/proteinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0.35"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="High-Protein"
+            android:textOn="High-Protein" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
+
+        <ToggleButton
+            android:id="@+id/alcoholButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="Alcohol"
+            android:textOn="Alcohol-free" />
+
+        <ToggleButton
+            android:id="@+id/veganButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="Vegan"
+            android:textOn="Vegan" />
+
+        <ToggleButton
+            android:id="@+id/vegetarianButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="Vegetarian"
+            android:textOn="Vegetarian" />
+
+        <ToggleButton
+            android:id="@+id/peanutsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="peanuts"
+            android:textOn="peanut-free" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="32dp"
+        android:paddingTop="16dp">
+
+        <ToggleButton
+            android:id="@+id/sugarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="Sugar"
+            android:textOn="Sugar-Consious" />
+
+        <ToggleButton
+            android:id="@+id/treenutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="Tree-nut"
+            android:textOn="Tree-Nut-Free" />
+
+    </LinearLayout>
+
 
     <Button
-        android:id="@+id/search_button2"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:text="@string/search"
-        android:onClick="storeValue"
-        android:textColor="@color/colorText"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_alignParentEnd="true" />
 
-</RelativeLayout>
+        android:id="@+id/search_button2"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentEnd="true"
+        android:layout_weight="0.17"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:onClick="storeValue"
+        android:text="@string/search"
+        android:textAllCaps="false"
+        android:textColor="@color/colorText"
+        android:textSize="24sp" />
+
+
+</LinearLayout>
