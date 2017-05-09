@@ -19,23 +19,23 @@ public class IntroScreen extends AppCompatActivity {
     }
 
     public void findCakes(View view) {
-        String text = "http://food2fork.com/api/search?key=c60b34b9ca87a32ff0758eb171c2ac13&q=cake";
+        String text = "https://api.edamam.com/search?q=cake%20&app_id=f290a7ef&app_key=049c4ad03438939ccc2a3130d0adfb44&from=0&to=50";
         RecipeSearch.setItext(text);
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent); //start of MainActivity.java
+        Intent intent = new Intent(this, MyActivity.class);
+        startActivity(intent); //start of MyActivity.java
     }
 
     public void findBurgers(View view) {
-        String text = "http://food2fork.com/api/search?key=c60b34b9ca87a32ff0758eb171c2ac13&q=burger";
+        String text = "https://api.edamam.com/search?q=burger%20&app_id=f290a7ef&app_key=049c4ad03438939ccc2a3130d0adfb44&from=0&to=50";
         RecipeSearch.setItext(text);
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent); //start of MainActivity.java
+        Intent intent = new Intent(this, MyActivity.class);
+        startActivity(intent); //start of MyActivity.java
     }
 
     public void findPizzas(View view) {
-        String text = "http://food2fork.com/api/search?key=c60b34b9ca87a32ff0758eb171c2ac13&q=pizza";
+        String text = "https://api.edamam.com/search?q=pizza%20&app_id=f290a7ef&app_key=049c4ad03438939ccc2a3130d0adfb44&from=0&to=50";
         RecipeSearch.setItext(text);
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent); //start of MainActivity.java
+        Intent intent = new Intent(this, MyActivity.class);
+        startActivity(intent); //start of MyActivity.java
     }
 }

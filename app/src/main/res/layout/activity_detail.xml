@@ -3,7 +3,6 @@
     android:id="@+id/scrollView"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_gravity="left|top"
     android:background="@color/colorBackground">
 
     <LinearLayout
@@ -28,11 +27,7 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/dragon_right" />
 
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+
             </FrameLayout>
 
 
@@ -41,45 +36,54 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
             android:orientation="vertical"
-            android:padding="16dp">
+
+            >
 
             <TextView
-                android:id="@+id/tvTitle"
+                android:id="@+id/tvLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RecipeTitle"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Label"
+                android:textSize="28sp"
                 android:textColor="@color/colorText"
-                android:textSize="32sp" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
-                android:id="@+id/tvPublisher"
+                android:id="@+id/tvSource"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Publisher"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/colorText" />
+                android:text="Source"
+                android:textColor="@color/colorText"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
-                android:id="@+id/tvPublisherUrl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PublisherURL"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/colorText" />
-
-            <TextView
-                android:id="@+id/tvSource_url"
+                android:id="@+id/tvUrl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
-                android:text="RecipeLink"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/colorText" />
+                android:text="Url"
+                android:textColor="@color/colorText"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/tvCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="Calories"
+                android:textColor="@color/colorText"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/tvYield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="Yield"
+                android:textColor="@color/colorText"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
 
         </LinearLayout>
     </LinearLayout>

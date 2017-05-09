@@ -28,8 +28,14 @@ public class RecipeSearch extends AppCompatActivity {
 
     public void storeValue(View view) {
         itext = et.getText().toString();
-        itext = "https://api.edamam.com/search?q=" + itext + "&app_id=f290a7ef&app_key=e872f9068619df645438f4e52127c9b2&from=0&to=" + resultsEt.getText().toString() + "&calories=gte%20"
-                + fromEt.getText().toString() +",%20lte%20" + toEt.getText().toString();
+        itext = "https://api.edamam.com/search?q=" + itext + "&app_id=f290a7ef&app_key=049c4ad03438939ccc2a3130d0adfb44&from=0&to=";
+        if (resultsEt.getText().toString().matches("")) {
+            itext = itext + "30";
+        } else itext = itext + resultsEt.getText().toString();
+        if (fromEt.getText().toString().matches("") && toEt.getText().toString().matches("")) {
+            itext = itext + "&calories=gte%2010,%20lte%205000";
+        } else
+            itext = itext + "&calories=gte%20" + fromEt.getText().toString() + ",%20lte%20" + toEt.getText().toString();
         itext = itext.replaceAll(" ", "%20").toLowerCase();
 
         Intent intent = new Intent(this, MyActivity.class);

@@ -48,11 +48,11 @@
             android:id="@+id/fromEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/editText"
             android:hint="From"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorText" />
 
@@ -130,10 +130,11 @@
 
         <ToggleButton
             android:id="@+id/fatButton"
-            android:layout_width="81dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
+            android:onClick="lowFatClick"
             android:background="@drawable/check"
             android:textColor="@color/colorText"
             android:textOff="Low-Fat"
@@ -141,8 +142,8 @@
 
         <ToggleButton
             android:id="@+id/carbButton"
-            android:layout_width="76dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:background="@drawable/check"
@@ -152,8 +153,8 @@
 
         <ToggleButton
             android:id="@+id/balancedButton"
-            android:layout_width="81dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:background="@drawable/check"
             android:textColor="@color/colorText"
@@ -163,8 +164,7 @@
         <ToggleButton
             android:id="@+id/proteinButton"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_weight="0.35"
+            android:layout_height="match_parent"
             android:background="@drawable/check"
             android:textColor="@color/colorText"
             android:textOff="High-Protein"
@@ -182,7 +182,7 @@
         <ToggleButton
             android:id="@+id/alcoholButton"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:layout_marginRight="8dp"
             android:background="@drawable/check"
             android:textColor="@color/colorText"
@@ -192,7 +192,7 @@
         <ToggleButton
             android:id="@+id/veganButton"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:background="@drawable/check"
             android:textColor="@color/colorText"
@@ -202,21 +202,14 @@
         <ToggleButton
             android:id="@+id/vegetarianButton"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:background="@drawable/check"
             android:textColor="@color/colorText"
             android:textOff="Vegetarian"
             android:textOn="Vegetarian" />
 
-        <ToggleButton
-            android:id="@+id/peanutsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@drawable/check"
-            android:textColor="@color/colorText"
-            android:textOff="peanuts"
-            android:textOn="peanut-free" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -229,7 +222,7 @@
         <ToggleButton
             android:id="@+id/sugarButton"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:background="@drawable/check"
             android:textColor="@color/colorText"
@@ -239,11 +232,21 @@
         <ToggleButton
             android:id="@+id/treenutButton"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
             android:background="@drawable/check"
             android:textColor="@color/colorText"
             android:textOff="Tree-nut"
             android:textOn="Tree-Nut-Free" />
+
+        <ToggleButton
+            android:id="@+id/peanutsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/check"
+            android:textColor="@color/colorText"
+            android:textOff="peanuts"
+            android:textOn="peanut-free" />
 
     </LinearLayout>
 

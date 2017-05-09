@@ -1,47 +1,9 @@
 package com.bitthebyte.kostasavgitidis.hungrydragon;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
+    /*
 
     private final String URL_TO_HIT = "https://api.edamam.com/search?q=chicken%20&app_id=f290a7ef&app_key=e872f9068619df645438f4e52127c9b2&from=0&to=3&calories=gte%20591,%20lte%20722";
     private ListView lvRecipes;
@@ -193,35 +155,10 @@ public class MainActivity extends ActionBarActivity {
                 holder = (ViewHolder) convertView.getTag();
             }
 
-            final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.progressBar);
 
             // Then later, when you want to display image
             final ViewHolder finalHolder = holder;
-            ImageLoader.getInstance().displayImage(recipeModelList.get(position).getHits().get(position).getRecipe().getImage(), holder.ivRecipeImage, new ImageLoadingListener() {
-                @Override
-                public void onLoadingStarted(String imageUri, View view) {
-                    progressBar.setVisibility(View.VISIBLE);
-                    finalHolder.ivRecipeImage.setVisibility(View.INVISIBLE);
-                }
 
-                @Override
-                public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
-                    progressBar.setVisibility(View.GONE);
-                    finalHolder.ivRecipeImage.setVisibility(View.INVISIBLE);
-                }
-
-                @Override
-                public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                    progressBar.setVisibility(View.GONE);
-                    finalHolder.ivRecipeImage.setVisibility(View.VISIBLE);
-                }
-
-                @Override
-                public void onLoadingCancelled(String imageUri, View view) {
-                    progressBar.setVisibility(View.GONE);
-                    finalHolder.ivRecipeImage.setVisibility(View.INVISIBLE);
-                }
-            });
 
             holder.tvSource.setText("Publisher: " + recipeModelList.get(position).getHits().get(position).getRecipe().getSource());
             holder.tvCalories.setText(String.valueOf(recipeModelList.get(position).getHits().get(position).getRecipe().getCalories()));
@@ -264,4 +201,8 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    */
+
+
 }
