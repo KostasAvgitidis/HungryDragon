@@ -2,10 +2,6 @@ package com.bitthebyte.kostasavgitidis.hungrydragon;
 
 import java.util.List;
 
-/**
- * Created by me on 5/8/2017.
- */
-
 public class RecipeModel {
 
     private List<HitsBean> hits;
